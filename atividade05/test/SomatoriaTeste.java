@@ -16,10 +16,23 @@ public class SomatoriaTeste {
         when(mockedPrimo.ehPrimo(10)).thenReturn(Boolean.FALSE);
         
         Somatoria soma = new Somatoria(mockedMathOps);
-        int[] numeros = new int[2];
-        numeros[0] = 5;
-        numeros[1] = 10;
+        int[] numeros = {5,10};
+       
       
         assertEquals(3628800, soma.somaDeFatoriais(numeros, mockedPrimo));
     }
+    
+   @Test
+    public void somaDeFatoriais_Vetor02() {
+        MathOps MathOps = null;
+        
+        
+        Somatoria soma = new Somatoria(MathOps);
+        int[] numeros = {3,4,4,5};
+        Primo Primo = null;
+       
+      
+        assertEquals(49, soma.somaDeFatoriais(numeros, Primo));
+    }
+    
 }
